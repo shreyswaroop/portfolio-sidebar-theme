@@ -1,4 +1,5 @@
 # portfolio-sidebar-theme
+# portfolio-sidebar-theme
 DDD + Lit web component based on OpenWC toolchain. This is intended to provide the following:
 - Look good via DDD, HAX design system
 - Simple, easy to read code via Lit
