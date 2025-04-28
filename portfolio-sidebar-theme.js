@@ -27,7 +27,7 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
     return css`
     :host {
       display: flex;
-      height: 100 vh;
+      height: 100vh;
     }
 
     nav {
@@ -47,17 +47,24 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
       font-size: var(--ddd-font-size-md, 1rem);
       cursor: pointer;
     }
+    main {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--ddd-spacing-4, 16px);
+      background-color: var(--ddd-theme-default-white, #ffffff);
+    }
    `;
   }
+
 
   render() {
     return html`
       <nav>
-        <button @click="${() => this._scrollToScreen('about')}">About</button>
-        <button @click="${() => this._scrollToScreen('projects')}">Projects</button>
-        <button @click="${() => this._scrollToScreen('experience')}">Experience</button>
-        <button @click="${() => this._scrollToScreen('work')}">Work</button>
-        <button @click="${() => this._scrollToScreen('contact')}">Contact</button>
+        <a href="#about" @click="${(e) => this._handleLinkClick(e, 'about')}">About</a>
+        <a href="#projects" @click="${(e) => this._handleLinkClick(e, 'projects')}">Projects</a>
+        <a href="#experience" @click="${(e) => this._handleLinkClick(e, 'experience')}">Experience</a>
+        <a href="#work" @click="${(e) => this._handleLinkClick(e, 'work')}">Work</a>
+        <a href="#contact" @click="${(e) => this._handleLinkClick(e, 'contact')}">Contact</a>
       </nav>
       <main>
         <slot></slot>
@@ -65,9 +72,13 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
     `;
   }
 
+  _handleLinkClick(e, screenId) {
+    e.preventDefault();
+    this._scrollToScreen(screenId);
+  }
+
   _scrollToScreen(screenId) {
-    const root = this.shadowRoot.querySelector("main");
-    const target = root.querySelector(`#${screenId}`);
+    const target = this.querySelector(`#${screenId}`);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
       history.replaceState(null, "", `#${screenId}`);
