@@ -1,5 +1,6 @@
 import { LitElement, html, css }from "lit";
-import { DDDSuper } from "@haxthewewb/d-d-d/d-d-d.js";
+import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
+
 
 export class PortfolioPage extends DDDSuper(LitElement){
     static get tag() {
@@ -7,7 +8,7 @@ export class PortfolioPage extends DDDSuper(LitElement){
     }
 
     constructor() {
-        supportsAdoptingStyleSheets();
+        super();
         this.title = "";
     }
 
