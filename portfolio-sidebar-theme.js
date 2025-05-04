@@ -109,7 +109,7 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
       <nav>
-        <a href="#about" @click="${(e) => this._handleLinkClick(e, 'about')}">About</a>
+        <a href="#home" @click="${(e) => this._handleLinkClick(e, 'home')}">Home</a>
         <a href="#projects" @click="${(e) => this._handleLinkClick(e, 'projects')}">Projects</a>
         <a href="#experience" @click="${(e) => this._handleLinkClick(e, 'experience')}">Experience</a>
         <a href="#work" @click="${(e) => this._handleLinkClick(e, 'work')}">Work</a>
@@ -125,7 +125,7 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
 
         
         ${this.activeScreen === "projects"
-          ? html`<a class="download-resume-btn" href="assets/resume.pdf" download target="_blank">Download Resume</a>`
+          ? html`<a class="download-resume-btn" href="/resume.pdf" download target="_blank">Download Resume</a>`
           : ""}
       </main>
     `;
