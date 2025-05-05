@@ -58,6 +58,8 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
         overflow-y: auto;
         padding: var(--ddd-spacing-6, 32px);
         background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+        color: #111;
+
       }
 
       .scroll-top {
@@ -95,14 +97,30 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
         background: #444;
       }
 
-      .profile-pic {
-        width: 180px;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto 20px auto;
+      .home-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        flex-wrap: wrap;
       }
+
+      .profile-pic {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border: 4px solid var(--ddd-theme-default-beaverBlue, #1e407c);
+        margin-top: 16px;
+      }
+
+
+.bio-text {
+  max-width: 600px;
+}
+
+
+
     `;
   }
 
@@ -112,7 +130,7 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
         <a href="#home" @click="${(e) => this._handleLinkClick(e, 'home')}">Home</a>
         <a href="#projects" @click="${(e) => this._handleLinkClick(e, 'projects')}">Projects</a>
         <a href="#experience" @click="${(e) => this._handleLinkClick(e, 'experience')}">Experience</a>
-        <a href="#work" @click="${(e) => this._handleLinkClick(e, 'work')}">Work</a>
+        <a href="#about" @click="${(e) => this._handleLinkClick(e, 'about')}">About</a>
         <a href="#contact" @click="${(e) => this._handleLinkClick(e, 'contact')}">Contact</a>
       </nav>
       <main>

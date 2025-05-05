@@ -4,34 +4,151 @@
   <meta charset="utf-8">
   <title>My Portfolio Sidebar Theme</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
   <script type="module" src="./portfolio-page.js"></script>
   <script type="module" src="./portfolio-sidebar.js"></script>
   <script type="module" src="./portfolio-sidebar-theme.js"></script>  
+  
+  <style>
+    .profile-pic {
+      display: block;
+      margin: 32px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid #1e407c;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .project-section {
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .project-section h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    .project-section p {
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    .project-section ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .project-section ul li {
+      margin-bottom: 6px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .project-section a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #1e407c;
+    }
+
+    .project-section a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
   <portfolio-sidebar-theme>
     <portfolio-page id="home" title="Shreyas Swaroop">
-      <p>Hi! I'm Shreyas Swaroop.</p>
-      <img src="Headshot.jpg" alt="Shreyas Swaroop Headshot" class="profile-pic" />
+      <div class="home-wrapper">
+        <img class="profile-pic" src="https://raw.githubusercontent.com/shreyswaroop/portfolio-sidebar-theme/main/Headshot.jpg" alt="Shreyas Swaroop headshot">
+        <div class="bio-text">
+          <h2>Hi, I'm Shreyas Swaroop</h2>
+          <p>I'm a junior at Penn State University majoring in Enterprise Technology Integration(ETI).</p>
+        </div>
+      </div>
     </portfolio-page>
-
+  
     <portfolio-page id="projects" title="Projects">
-      <p>Project 1, Project 2, Project 3...</p>
+      <div class="project-section">
+        <h3>ddd-steps-list</h3>
+        <p>
+          A custom web component for vertical step lists. It supports auto-numbering, DDD theming via <code>data-primary</code>, and child validation.
+        </p>
+        <ul>
+          <li>Auto-numbers steps</li>
+          <li>Validates child elements</li>
+          <li>Responsive layout</li>
+          <li>Easy theming</li>
+        </ul>
+        <p><a href="https://github.com/shreyswaroop/ddd-steps-list" target="_blank">View on GitHub</a></p>
+      </div>
+  
+      <div class="project-section">
+        <h3>github-rpg-contributors</h3>
+        <p>
+          A fun widget that visualizes GitHub contributors as RPG characters using live GitHub API data.
+        </p>
+        <ul>
+          <li>Real-time data from GitHub</li>
+          <li>Unique RPG avatars</li>
+          <li>Fully customizable (org/repo/limit)</li>
+        </ul>
+        <p><a href="https://github.com/shreyswaroop/github-rpg-contributors" target="_blank">View on GitHub</a></p>
+      </div>
     </portfolio-page>
-
+  
     <portfolio-page id="experience" title="Experience">
-      <p>Here’s where I've worked and learned.</p>
+      <div class="experience-entry">
+        <h3>Data Entry Clerk – Centurion</h3>
+        <p><em>May 2024 – Present</em></p>
+        <ul>
+          <li>Entered and updated large volumes of data with speed and accuracy into internal systems</li>
+          <li>Verified source documents for completeness and correctness</li>
+          <li>Utilized Excel and company databases to support reporting and analysis</li>
+        </ul>
+      </div>
+    
+      <div class="experience-entry">
+        <h3>Information Systems Engineer Intern – AAMC</h3>
+        <p><em>July 2023 – August 2023</em></p>
+        <ul>
+          <li>Worked with developers to build and improve internal web pages and dashboards</li>
+          <li>Attended focus groups, grooming, and scrum meetings; created user stories and models</li>
+          <li>Provided insights on both business and IT-related issues; contributed to Selenium/JS tasks</li>
+        </ul>
+      </div>
+    
+      <div class="experience-entry">
+        <h3>Lead Tutor – Kumon</h3>
+        <p><em>2019 – 2022</em></p>
+        <ul>
+          <li>Managed sessions for over 50 students in Math and English, grades K–12</li>
+          <li>Coordinated learning plans, tracked student progress, and communicated with parents and staff</li>
+          <li>Developed strong communication, time-management, and leadership skills</li>
+        </ul>
+      </div>
     </portfolio-page>
 
-    <portfolio-page id="work" title="Work Samples">
-      <p>My best work examples and case studies.</p>
+    <portfolio-page id="about" title="About Me">
+      <p>
+        I'm an Indian-American student currently studying Enterprise Technology Integration at Penn State University. I'm passionate about solving problems through code and enjoy working on both front-end and back-end web applications. I also have an interest in project management.</p>
+      </p>
+      <p>
+        Outside of tech, I love hiking, listening and making music, and playing volleyball. I believe these creative and reflective outlets help fuel my curiosity and keep me balanced, and make me a more well-rounded developer.
+      </p>
     </portfolio-page>
-
+  
     <portfolio-page id="contact" title="Contact">
-      <p>Email me at shreyasniraj@gmail.com!</p>
+      <p>Email: shreyasniraj@gmail.com</p>
+      <p>Phone: 215-932-7244</p>
     </portfolio-page>
   </portfolio-sidebar-theme>
+  
 </body>
-
 </html>
