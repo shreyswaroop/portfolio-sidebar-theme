@@ -19,7 +19,7 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
       showScrollTop: { type: Boolean },
     };
   }
-//
+
   constructor() {
     super();
     this.activeScreen = "";
