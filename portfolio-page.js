@@ -22,12 +22,12 @@ export class PortfolioPage extends DDDSuper(LitElement){
         return [super.styles, css`
           :host {
             display: block;
-            height: 100vh;
             padding: var(--ddd-spacing-6, 24px);
             background-color: var(--ddd-theme-default-white, white);
             box-sizing: border-box;
+            scroll-margin-top: 80px;
           }
-    
+
           h2 {
             font-size: var(--ddd-font-size-xl, 2rem);
             color: var(--ddd-theme-default-black, black);

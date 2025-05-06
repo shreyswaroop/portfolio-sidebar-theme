@@ -30,6 +30,7 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
     return css`
       :host {
         display: flex;
+        flex-direction: row;
         height: 100vh;
       }
 
@@ -51,6 +52,11 @@ export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
         font-weight: bold;
         cursor: pointer;
         transition: background 0.3s;
+        text-align: left;
+      }
+
+      nav a:hover {
+        background: rgba(255, 255, 255, 0.1);
       }
 
       main {
