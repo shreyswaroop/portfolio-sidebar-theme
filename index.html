@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My Portfolio Sidebar Theme</title>
+  <title>Shreyas Swaroop | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 
   <script type="module" src="./portfolio-page.js"></script>
   <script type="module" src="./portfolio-sidebar-theme.js"></script>  
@@ -22,28 +21,27 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     }
 
-
-    .project-section {
+    .project-section, .experience-entry {
       margin-bottom: 48px;
       padding-bottom: 24px;
       border-bottom: 1px solid #ccc;
     }
 
-    .project-section h3 {
+    .project-section h3, .experience-entry h3 {
       margin-bottom: 0.25rem;
     }
 
-    .project-section p {
+    .project-section p, .experience-entry p {
       line-height: 1.6;
       max-width: 700px;
     }
 
-    .project-section ul {
+    .project-section ul, .experience-entry ul {
       padding-left: 20px;
       margin: 10px 0;
     }
 
-    .project-section ul li {
+    .project-section ul li, .experience-entry ul li {
       margin-bottom: 6px;
       font-size: 1rem;
       line-height: 1.4;
@@ -68,26 +66,12 @@
         <img class="profile-pic" src="https://raw.githubusercontent.com/shreyswaroop/portfolio-sidebar-theme/main/Headshot.jpg" alt="Shreyas Swaroop headshot">
         <div class="bio-text">
           <h2>Hi, I'm Shreyas Swaroop</h2>
-          <p>I'm a junior at Penn State University majoring in Enterprise Technology Integration(ETI).</p>
+          <p>Recent graduate from The Pennsylvania State University with a B.S. in Enterprise Technology Integration (ETI), specializing in data analysis, systems integration, and enterprise cloud architecture.</p>
         </div>
       </div>
     </portfolio-page>
   
     <portfolio-page id="projects" title="Projects">
-      <div class="project-section">
-        <h3>ddd-steps-list</h3>
-        <p>
-          A custom web component for vertical step lists. It supports auto-numbering, DDD theming via <code>data-primary</code>, and child validation.
-        </p>
-        <ul>
-          <li>Auto-numbers steps</li>
-          <li>Validates child elements</li>
-          <li>Responsive layout</li>
-          <li>Easy theming</li>
-        </ul>
-        <p><a href="https://github.com/shreyswaroop/ddd-steps-list" target="_blank">View on GitHub</a></p>
-      </div>
-  
       <div class="project-section">
         <h3>github-rpg-contributors</h3>
         <p>
@@ -100,46 +84,79 @@
         </ul>
         <p><a href="https://github.com/shreyswaroop/github-rpg-contributors" target="_blank">View on GitHub</a></p>
       </div>
+
+      <div class="project-section">
+        <h3>HAX Small Business Pizzeria Starter Kit</h3>
+        <p>
+          Designed and developed a modular, reusable small business website template within Penn State's open-source HAX platform. Built custom web components using the Lit library and structured site content with JSON Outline Schema (JOS).
+        </p>
+        <ul>
+          <li><strong>Novice Mode Content Locking:</strong> Guarded editing interface allowing non-technical business owners to update menus and hours without risking layout stability.</li>
+          <li><strong>API Integrations:</strong> Embedded Google Maps API for automated location rendering and Yelp review APIs for social proof.</li>
+          <li><strong>Streamlined Ordering:</strong> Connected direct links to third-party delivery platforms (DoorDash) and PDF/JPEG menu uploads.</li>
+        </ul>
+      </div>
+  
+      <div class="project-section">
+        <h3>March Madness Upset Risk Dashboard</h3>
+        <p>
+          Built an end-to-end data pipeline and interactive BI dashboard combining historical Kaggle tournament results, advanced team metrics, and betting market expectations.
+        </p>
+        <ul>
+          <li><strong>Advanced ETL & Power Query:</strong> Transformed messy string codes into numeric seed values and performed composite-key merges across star-schema tables.</li>
+          <li><strong>Custom Metric Design:</strong> Engineered binary upset flags, favorite/underdog indicators, and matchup gap calculations to quantify risk.</li>
+          <li><strong>Data Storytelling:</strong> Designed a three-tiered analytical dashboard guiding users from historical trends and current team strength (ESPN BPI via cbbdata) to real-time matchup predictions.</li>
+        </ul>
+      </div>
+
+      <div class="project-section">
+        <h3>NFL Draft IQ & Combine IQ Case Study</h3>
+        <p>
+          Modeled an enterprise-grade cloud system architecture leveraging AWS to convert raw scouting and performance data into real-time interactive insights for fans and analysts.
+        </p>
+        <ul>
+          <li><strong>Cloud Data Pipeline:</strong> Designed automated ingestion workflows using AWS Lambda, secure structured storage via Amazon S3, and interactive analytics powered by Amazon QuickSight.</li>
+          <li><strong>Conversational GenAI:</strong> Conceptualized the Draft IQ Assistant powered by Amazon Q Business for natural-language conversational analytics.</li>
+          <li><strong>Rigorously Modeled SDLC Artifacts:</strong> Engineered comprehensive UML use-case diagrams, swimlane activity charts, sequence diagrams, and normalized ER database schemas.</li>
+        </ul>
+      </div>
     </portfolio-page>
   
     <portfolio-page id="experience" title="Experience">
       <div class="experience-entry">
-        <h3>Data Entry Clerk – Centurion</h3>
-        <p><em>May 2024 – Present</em></p>
+        <h3>Data Entry Clerk – Centurion Health</h3>
+        <p><em>June 2024 – October 2026</em>[cite: 73]</p>
         <ul>
-          <li>Entered and updated large volumes of data with speed and accuracy into internal systems</li>
-          <li>Verified source documents for completeness and correctness</li>
-          <li>Utilized Excel and company databases to support reporting and analysis</li>
+          <li>Maintained and validated company and contractual records across internal systems, ensuring data accuracy, consistency, and confidentiality[cite: 73].</li>
+          <li>Generated reports and managed records to support daily administrative and business operations[cite: 73].</li>
         </ul>
       </div>
     
       <div class="experience-entry">
         <h3>Information Systems Engineer Intern – AAMC</h3>
-        <p><em>July 2023 – August 2023</em></p>
+        <p><em>June 2023 – August 2023</em>[cite: 73]</p>
         <ul>
-          <li>Worked with developers to build and improve internal web pages and dashboards</li>
-          <li>Attended focus groups, grooming, and scrum meetings; created user stories and models</li>
-          <li>Provided insights on both business and IT-related issues; contributed to Selenium/JS tasks</li>
+          <li>Supported business analysts with systems analysis, requirements gathering, and documentation of existing ("AS-IS") business processes[cite: 73].</li>
+          <li>Participated in Agile Scrum meetings, backlog refinement sessions, and focus groups to develop user stories and business models[cite: 73].</li>
         </ul>
       </div>
     
       <div class="experience-entry">
-        <h3>Lead Tutor – Kumon</h3>
-        <p><em>2019 – 2022</em></p>
+        <h3>Tutor/Manager – Kumon</h3>
+        <p><em>August 2019 – August 2022</em>[cite: 73]</p>
         <ul>
-          <li>Managed sessions for over 50 students in Math and English, grades K–12</li>
-          <li>Coordinated learning plans, tracked student progress, and communicated with parents and staff</li>
-          <li>Developed strong communication, time-management, and leadership skills</li>
+          <li>Tutored K-12 students in mathematics and English while communicating academic progress to parents[cite: 73].</li>
+          <li>Managed daily operations, including payment processing, facility management, and student enrollment[cite: 73].</li>
         </ul>
       </div>
     </portfolio-page>
 
     <portfolio-page id="about" title="About Me">
       <p>
-        I'm an Indian-American student currently studying Enterprise Technology Integration at Penn State University. I'm passionate about solving problems through code and enjoy working on both front-end and back-end web applications. I also have an interest in project management.</p>
+        I'm an Indian-American professional who recently graduated from Penn State University with a degree in Enterprise Technology Integration. I'm passionate about solving complex operational and technical problems through structured data analysis, systems design, and modern web applications.
       </p>
       <p>
-        Outside of tech, I love hiking, listening and making music, and playing volleyball. I believe these creative and reflective outlets help fuel my curiosity and keep me balanced, and make me a more well-rounded developer.
+        Outside of tech, I love hiking, listening and making music, and playing volleyball. I believe these creative and reflective outlets help fuel my curiosity, keep me balanced, and make me a more well-rounded technologist.
       </p>
     </portfolio-page>
   
@@ -148,6 +165,5 @@
       <p>Phone: 215-932-7244</p>
     </portfolio-page>
   </portfolio-sidebar-theme>
-  
 </body>
 </html>
