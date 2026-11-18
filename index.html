@@ -1,29 +1,701 @@
 
-<!-- Social Networking Application Screenshots -->
-<div class="project-screenshots">
-  <h4>Application Screenshots</h4>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shreyas Swaroop | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <figure>
-    <img
-      src="./NetworkingApp2.png"
-      alt="Social networking friends dashboard"
-      loading="lazy"
-    >
-    <figcaption>
-      Friends Dashboard — Manage connections,
-      send requests, and accept or reject invitations.
-    </figcaption>
-  </figure>
+  <script type="module" src="./portfolio-page.js"></script>
+  <script type="module" src="./portfolio-sidebar-theme.js"></script>
 
-  <figure>
-    <img
-      src="./NetworkingApp.png"
-      alt="Social networking login and registration"
-      loading="lazy"
-    >
-    <figcaption>
-      Authentication Interface — User login
-      and account registration.
-    </figcaption>
-  </figure>
-</div>
+  <style>
+    .profile-pic {
+      display: block;
+      margin: 32px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid #1e407c;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-section,
+    .experience-entry {
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .project-section h3,
+    .experience-entry h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    .project-section p,
+    .experience-entry p {
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    .project-section ul,
+    .experience-entry ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .project-section ul li,
+    .experience-entry ul li {
+      margin-bottom: 6px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .project-section a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #1e407c;
+    }
+
+    .project-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Networking Screenshots */
+
+    .project-screenshots {
+      margin-top: 24px;
+      max-width: 800px;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .screenshot-card {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .screenshot-image {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      background: #101010;
+      border: 1px solid #555;
+      border-radius: 8px;
+    }
+
+    .screenshot-caption {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #777;
+    }
+
+    @media (max-width: 650px) {
+      .screenshot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshot-image {
+        height: auto;
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <portfolio-sidebar-theme>
+
+    <!-- HOME PAGE -->
+
+    <portfolio-page id="home" title="Shreyas Swaroop">
+
+      <div class="home-wrapper">
+
+        <img
+          class="profile-pic"
+          src="https://raw.githubusercontent.com/shreyswaroop/portfolio-sidebar-theme/main/Headshot.jpg"
+          alt="Shreyas Swaroop headshot"
+        >
+
+        <div class="bio-text">
+          <h2>Hi, I'm Shreyas Swaroop</h2>
+
+          <p>
+            Recent graduate from The Pennsylvania State
+            University with a B.S. in Enterprise Technology
+            Integration (ETI), specializing in data analysis,
+            systems integration, and full-stack application
+            development.
+          </p>
+        </div>
+
+      </div>
+
+    </portfolio-page>
+
+
+    <!-- PROJECTS PAGE -->
+
+    <portfolio-page id="projects" title="Projects">
+
+
+      <!-- PROJECT 1: MY MOVIE LIST -->
+
+      <div class="project-section">
+
+        <h3>MyMovieList (MovieDB412)</h3>
+
+        <p>
+          Full-stack movie discovery and watchlist management
+          web application built with React, Node.js/Express,
+          and MySQL, integrating real-time catalog and
+          streaming availability data from The Movie Database
+          (TMDB) API.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Full-Stack Architecture:</strong>
+            Engineered a RESTful Express backend using a
+            Facade service pattern alongside a React 19
+            + Vite frontend with reactive state management.
+          </li>
+
+          <li>
+            <strong>Relational Database &amp; Auth:</strong>
+            Designed a normalized MySQL schema (users,
+            watchlists, watched history) secured with
+            bcrypt password hashing and JWT authentication.
+          </li>
+
+          <li>
+            <strong>Social &amp; Discovery Features:</strong>
+            Built live movie search, watch-provider lookups,
+            watched-history tracking, and shareable friend
+            watchlists.
+          </li>
+        </ul>
+
+        <p>
+          <a
+            href="https://github.com/RudraIV/MovieDB412"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- PROJECT 2: MARCH MADNESS -->
+
+      <div class="project-section">
+
+        <h3>March Madness Upset Risk Dashboard</h3>
+
+        <p>
+          Built an end-to-end data pipeline and interactive
+          BI dashboard in Power BI combining historical
+          Kaggle tournament results, advanced team metrics,
+          and betting market expectations.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Advanced ETL &amp; Power Query:</strong>
+            Transformed messy string codes into numeric
+            seed values and performed composite-key merges
+            across star-schema tables.
+          </li>
+
+          <li>
+            <strong>Custom Metric Design:</strong>
+            Engineered binary upset flags, favorite/underdog
+            indicators, and matchup gap calculations to
+            quantify risk.
+          </li>
+
+          <li>
+            <strong>Data Storytelling:</strong>
+            Designed a three-tiered analytical dashboard
+            guiding users from historical trends and
+            current team strength (ESPN BPI via cbbdata)
+            to real-time matchup predictions.
+          </li>
+        </ul>
+
+        <p>
+          <a
+            href="https://drive.google.com/file/d/1Lq4xu068RO2VvClD85_csdMJmNJG8jGo/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project Documentation (PDF)
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- PROJECT 3: NFL DRAFT IQ -->
+
+      <div class="project-section">
+
+        <h3>NFL Draft IQ &amp; Combine IQ Case Study</h3>
+
+        <p>
+          Modeled an enterprise-grade cloud system
+          architecture leveraging AWS to convert raw
+          scouting and performance data into real-time
+          interactive insights for fans and analysts.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Cloud Data Pipeline:</strong>
+            Designed automated ingestion workflows using
+            AWS Lambda, secure structured storage via
+            Amazon S3, and interactive analytics powered
+            by Amazon QuickSight.
+          </li>
+
+          <li>
+            <strong>Conversational GenAI:</strong>
+            Conceptualized the Draft IQ Assistant powered
+            by Amazon Q Business for natural-language
+            conversational analytics.
+          </li>
+
+          <li>
+            <strong>Rigorously Modeled SDLC Artifacts:</strong>
+            Engineered comprehensive UML use-case diagrams,
+            swimlane activity charts, sequence diagrams,
+            and normalized ER database schemas.
+          </li>
+        </ul>
+
+        <p>
+          <a
+            href="https://drive.google.com/file/d/1sCozlP5f5q2SB1KOz9afdy7idXdIOL27/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Case Study Report (PDF)
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- PROJECT 4: SOCIAL NETWORKING APP -->
+
+      <div class="project-section">
+
+        <h3>Full-Stack Social Networking Application</h3>
+
+        <p>
+          Developed a full-stack social networking
+          application as part of a collaborative academic
+          project in a Penn State cloud computing course.
+          The application integrates a React frontend,
+          Node.js/Express backend, and MySQL relational
+          database to support secure user accounts
+          and social interactions.
+        </p>
+
+        <ul>
+
+          <li>
+            <strong>Full-Stack Architecture:</strong>
+            Integrated React and Vite frontend components
+            with RESTful Express API endpoints to enable
+            communication between application layers.
+          </li>
+
+          <li>
+            <strong>Database Management &amp; Authentication:</strong>
+            Used MySQL database operations alongside
+            JWT-based authentication and bcrypt password
+            hashing to support account management
+            and secure user access.
+          </li>
+
+          <li>
+            <strong>Social Networking Features:</strong>
+            Built functionality for user registration,
+            login, friend requests, friend acceptance
+            and rejection, and relationship management.
+          </li>
+
+          <li>
+            <strong>Systems Integration &amp; Collaboration:</strong>
+            Applied relational database concepts,
+            asynchronous API requests, and modular
+            software development practices within
+            a collaborative group environment.
+          </li>
+
+        </ul>
+
+        <p>
+          <em>
+            Academic Group Project |
+            React, JavaScript, Node.js, Express.js,
+            MySQL, REST APIs, JWT, bcrypt
+          </em>
+        </p>
+
+
+        <!-- APPLICATION SCREENSHOTS -->
+
+        <div
+          class="project-screenshots"
+          style="margin-top:24px; max-width:800px;"
+        >
+
+          <h4 style="font-size:1.1rem; margin-bottom:16px;">
+            Application Screenshots
+          </h4>
+
+          <div
+            class="screenshot-grid"
+            style="
+              display:grid;
+              grid-template-columns:repeat(
+                auto-fit,
+                minmax(min(100%, 280px), 1fr)
+              );
+              gap:18px;
+              align-items:start;
+            "
+          >
+
+            <!-- FRIENDS DASHBOARD -->
+
+            <figure
+              class="screenshot-card"
+              style="margin:0; min-width:0;"
+            >
+
+              <img
+                class="screenshot-image"
+                src="./NetworkingApp2.png"
+                alt="Social networking friends dashboard"
+                loading="lazy"
+                style="
+                  display:block;
+                  width:100%;
+                  height:230px;
+                  object-fit:contain;
+                  background:#101010;
+                  border:1px solid #555;
+                  border-radius:8px;
+                  box-sizing:border-box;
+                "
+              >
+
+              <figcaption
+                class="screenshot-caption"
+                style="
+                  display:block;
+                  margin-top:10px;
+                  font-size:0.85rem;
+                  line-height:1.5;
+                  color:#777;
+                "
+              >
+                <strong>Friends Dashboard:</strong>
+                Manage connections, send friend requests,
+                and accept or reject incoming invitations.
+              </figcaption>
+
+            </figure>
+
+
+            <!-- LOGIN AND REGISTRATION -->
+
+            <figure
+              class="screenshot-card"
+              style="margin:0; min-width:0;"
+            >
+
+              <img
+                class="screenshot-image"
+                src="./NetworkingApp.png"
+                alt="Social networking login and registration interface"
+                loading="lazy"
+                style="
+                  display:block;
+                  width:100%;
+                  height:230px;
+                  object-fit:contain;
+                  background:#101010;
+                  border:1px solid #555;
+                  border-radius:8px;
+                  box-sizing:border-box;
+                "
+              >
+
+              <figcaption
+                class="screenshot-caption"
+                style="
+                  display:block;
+                  margin-top:10px;
+                  font-size:0.85rem;
+                  line-height:1.5;
+                  color:#777;
+                "
+              >
+                <strong>Authentication Interface:</strong>
+                User login and account registration
+                functionality.
+              </figcaption>
+
+            </figure>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROJECT 5: HAX PIZZERIA -->
+
+      <div class="project-section">
+
+        <h3>HAX Small Business Pizzeria Starter Kit</h3>
+
+        <p>
+          Designed and developed a modular, reusable
+          small business website template within Penn
+          State's open-source HAX platform. Built
+          custom web components using the Lit library
+          and structured site content with JSON Outline
+          Schema (JOS).
+        </p>
+
+        <ul>
+          <li>
+            <strong>Novice Mode Content Locking:</strong>
+            Guarded editing interface allowing
+            non-technical business owners to update
+            menus and hours without risking layout stability.
+          </li>
+
+          <li>
+            <strong>API Integrations:</strong>
+            Embedded Google Maps API for automated
+            location rendering and Yelp review APIs
+            for social proof.
+          </li>
+
+          <li>
+            <strong>Streamlined Ordering:</strong>
+            Connected direct links to third-party
+            delivery platforms (DoorDash) and
+            PDF/JPEG menu uploads.
+          </li>
+        </ul>
+
+        <p>
+          <a
+            href="https://drive.google.com/file/d/1aNhxC9rCdx3bBq-VZfIaYSQihHzIL_3C/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project Report &amp; Designs (PDF)
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- PROJECT 6: GITHUB RPG -->
+
+      <div class="project-section">
+
+        <h3>github-rpg-contributors</h3>
+
+        <p>
+          A custom web component widget that visualizes
+          GitHub repository contributors as RPG characters
+          using live GitHub API data.
+        </p>
+
+        <ul>
+          <li>
+            Real-time data fetching from the GitHub API.
+          </li>
+
+          <li>
+            Dynamic RPG character avatar generation.
+          </li>
+
+          <li>
+            Customizable organization, repository,
+            and contributor display limits.
+          </li>
+        </ul>
+
+        <p>
+          <a
+            href="https://github.com/shreyswaroop/github-rpg-contributors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub
+          </a>
+        </p>
+
+      </div>
+
+
+    </portfolio-page>
+
+
+    <!-- EXPERIENCE PAGE -->
+
+    <portfolio-page id="experience" title="Experience">
+
+      <div class="experience-entry">
+
+        <h3>Data Entry Clerk – Centurion Health</h3>
+
+        <p>
+          <em>June 2024 – October 2026</em>
+        </p>
+
+        <ul>
+          <li>
+            Maintained and validated company and
+            contractual records across internal systems,
+            ensuring data accuracy, consistency,
+            and confidentiality.
+          </li>
+
+          <li>
+            Generated reports and managed records
+            to support daily administrative
+            and business operations.
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div class="experience-entry">
+
+        <h3>Information Systems Engineer Intern – AAMC</h3>
+
+        <p>
+          <em>June 2023 – August 2023</em>
+        </p>
+
+        <ul>
+          <li>
+            Supported business analysts with systems
+            analysis, requirements gathering, and
+            documentation of existing ("AS-IS")
+            business processes.
+          </li>
+
+          <li>
+            Participated in Agile Scrum meetings,
+            backlog refinement sessions, and focus
+            groups to develop user stories
+            and business models.
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div class="experience-entry">
+
+        <h3>Tutor/Manager – Kumon</h3>
+
+        <p>
+          <em>August 2019 – August 2022</em>
+        </p>
+
+        <ul>
+          <li>
+            Tutored K–12 students in mathematics
+            and English while communicating
+            academic progress to parents.
+          </li>
+
+          <li>
+            Managed daily operations, including
+            payment processing, facility management,
+            and student enrollment.
+          </li>
+        </ul>
+
+      </div>
+
+    </portfolio-page>
+
+
+    <!-- ABOUT ME PAGE -->
+
+    <portfolio-page id="about" title="About Me">
+
+      <p>
+        I'm an Indian-American professional who
+        graduated from Penn State University with
+        a B.S. in Enterprise Technology Integration.
+        I'm passionate about solving complex
+        operational and technical problems through
+        structured data analysis, systems design,
+        and full-stack web applications.
+      </p>
+
+      <p>
+        Outside of tech, I love hiking, listening
+        to and making music, and playing volleyball.
+        These creative and active outlets keep me
+        balanced, fuel my curiosity, and make me
+        a more well-rounded technologist.
+      </p>
+
+    </portfolio-page>
+
+
+    <!-- CONTACT PAGE -->
+
+    <portfolio-page id="contact" title="Contact">
+
+      <p>
+        Email:
+        <a href="mailto:shreyasniraj@gmail.com">
+          shreyasniraj@gmail.com
+        </a>
+      </p>
+
+      <p>
+        Phone:
+        <a href="tel:+12159327244">
+          215-932-7244
+        </a>
+      </p>
+
+    </portfolio-page>
+
+  </portfolio-sidebar-theme>
+</body>
+</html>
