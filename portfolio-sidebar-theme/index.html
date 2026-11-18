@@ -1,129 +1,457 @@
+
 <!doctype html>
 <html lang="en">
-
 <head>
-  <base href="/">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Demonstration for portfolio-sidebar-theme">
+  <title>Shreyas Swaroop | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script type="module" src="./portfolio-page.js"></script>
+  <script type="module" src="./portfolio-sidebar-theme.js"></script>
 
   <style>
-    :root, html, body {
-      margin: 0;
-      padding: 0;
+    .profile-pic {
+      display: block;
+      margin: 32px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid #1e407c;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     }
-    #demo {
-      margin: var(--ddd-spacing-2);
+
+    .project-section,
+    .experience-entry {
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ccc;
     }
-    portfolio-sidebar-theme {
-      margin: var(--ddd-spacing-2);
-      border: var(--ddd-border-md);
-      border-radius: var(--ddd-radius-lg);
+
+    .project-section h3,
+    .experience-entry h3 {
+      margin-bottom: 0.25rem;
     }
-    portfolio-sidebar-theme:hover {
-      box-shadow: var(--ddd-boxShadow-sm);
+
+    .project-section p,
+    .experience-entry p {
+      line-height: 1.6;
+      max-width: 700px;
     }
-    #example {
-      --portfolio-sidebar-theme-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
+
+    .project-section ul,
+    .experience-entry ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .project-section ul li,
+    .experience-entry ul li {
+      margin-bottom: 6px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .project-section a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #1e407c;
+    }
+
+    .project-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Networking Project Screenshots */
+
+    .project-screenshots {
+      margin-top: 24px;
+      max-width: 700px;
+    }
+
+    .project-screenshots h4 {
+      margin-bottom: 16px;
+    }
+
+    .project-screenshots figure {
+      margin: 0 0 24px;
+    }
+
+    .project-screenshots img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .project-screenshots figcaption {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #777;
     }
   </style>
-  <title>portfolio-sidebar-theme</title>
 </head>
 
 <body>
-  <div id="demo">
-    <h1>portfolio-sidebar-theme</h1>
-    <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Default</h2>
-    <portfolio-sidebar-theme></portfolio-sidebar-theme>
-    <h2>Slot usage</h2>
-    <portfolio-sidebar-theme data-accent="2" data-primary="17"><div>Sample slot content</div></portfolio-sidebar-theme>
-    <h2>Property usage</h2>
-    <portfolio-sidebar-theme id="example" title="Sample property title"></portfolio-sidebar-theme>
-  </div>
-  <script type="module" src="./portfolio-sidebar-theme.js"></script>
+  <portfolio-sidebar-theme>
 
-  <!-- Take HAX, the Web and you further down the rabbit hole -->
-  <style>
-    #follow-the-white-rabbit {
-      margin: var(--ddd-spacing-4) auto 64px  16px;
-      background-color: var(--ddd-accent-4);
-      color: black;
-    }
-    #follow-the-white-rabbit[open] summary {
-      background-color: var(--ddd-accent-4) !important;
-      color: black;
-    }
-    #follow-the-white-rabbit[open] .content {
-      padding: 0 var(--ddd-spacing-4);
-    }
-    #follow-the-white-rabbit ul,
-    #follow-the-white-rabbit li {
-      padding: 0;
-      margin: 0;
-    }
-    #follow-the-white-rabbit li {
-      font-size: var(--ddd-font-size-xs);
-      list-style: none;
-    }
-    #follow-the-white-rabbit li strong,
-    #follow-the-white-rabbit li a {
-      padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
-      color: black;
-      display: block;
-      font-weight: bold;
-    }
-    #follow-the-white-rabbit li:focus-within a,
-    #follow-the-white-rabbit li:hover a {
-      background-color: black;
-      color: yellow;
-    }
-  </style>
-  <details id="follow-the-white-rabbit" open>
-    <summary>How to Develop</summary>
-    <div class="content">
+    <!-- HOME -->
+    <portfolio-page id="home" title="Shreyas Swaroop">
+      <div class="home-wrapper">
+        <img
+          class="profile-pic"
+          src="https://raw.githubusercontent.com/shreyswaroop/portfolio-sidebar-theme/main/Headshot.jpg"
+          alt="Shreyas Swaroop headshot"
+        >
+        <div class="bio-text">
+          <h2>Hi, I'm Shreyas Swaroop</h2>
+          <p>
+            Recent graduate from The Pennsylvania State University
+            with a B.S. in Enterprise Technology Integration (ETI),
+            specializing in data analysis, systems integration,
+            and full-stack application development.
+          </p>
+        </div>
+      </div>
+    </portfolio-page>
+
+    <!-- PROJECTS -->
+    <portfolio-page id="projects" title="Projects">
+
+      <!-- PROJECT 1 -->
+      <div class="project-section">
+        <h3>MyMovieList (MovieDB412)</h3>
+        <p>
+          Full-stack movie discovery and watchlist management web
+          application built with React, Node.js/Express, and MySQL,
+          integrating real-time catalog and streaming availability
+          data from The Movie Database (TMDB) API.
+        </p>
+        <ul>
+          <li>
+            <strong>Full-Stack Architecture:</strong>
+            Engineered a RESTful Express backend using a Facade
+            service pattern alongside a React 19 + Vite frontend
+            with reactive state management.
+          </li>
+          <li>
+            <strong>Relational Database &amp; Auth:</strong>
+            Designed a normalized MySQL schema (users, watchlists,
+            watched history) secured with bcrypt password hashing
+            and JWT authentication.
+          </li>
+          <li>
+            <strong>Social &amp; Discovery Features:</strong>
+            Built live movie search, watch-provider lookups,
+            watched-history tracking, and shareable friend watchlists.
+          </li>
+        </ul>
+        <p>
+          <a href="https://github.com/RudraIV/MovieDB412"
+             target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </a>
+        </p>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-section">
+        <h3>Full-Stack Social Networking Application</h3>
+        <p>
+          Academic group project developed as part of a cloud
+          computing course at Penn State. Built a full-stack
+          social networking application integrating a React
+          frontend, Node.js/Express backend, and MySQL
+          relational database to support user accounts
+          and social interactions.
+        </p>
+        <ul>
+          <li>
+            <strong>Full-Stack Architecture:</strong>
+            Integrated React and Vite frontend components
+            with RESTful Express API endpoints for
+            communication between application layers.
+          </li>
+          <li>
+            <strong>Database &amp; Authentication:</strong>
+            Implemented MySQL database operations alongside
+            JWT-based authentication and bcrypt password hashing
+            for account management.
+          </li>
+          <li>
+            <strong>Social Networking Features:</strong>
+            Developed functionality for registration, login,
+            profile management, friend requests, request
+            approval/rejection, and relationship tracking.
+          </li>
+          <li>
+            <strong>Systems Integration:</strong>
+            Applied relational database principles,
+            asynchronous API requests, and modular software
+            development practices within a collaborative project.
+          </li>
+        </ul>
+
+        <p>
+          <em>
+            Academic Group Project | React, JavaScript,
+            Node.js, Express.js, MySQL, REST APIs, JWT, bcrypt
+          </em>
+        </p>
+
+        <!-- PROJECT SCREENSHOTS -->
+        <div class="project-screenshots">
+          <h4>Application Screenshots</h4>
+
+          <figure>
+            <img
+              src="./NetworkingApp2.png"
+              alt="Social networking application friends dashboard"
+              loading="lazy"
+            >
+            <figcaption>
+              Friends Dashboard — Manage existing friends
+              and accept or reject incoming friend requests.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="./NetworkingApp.png"
+              alt="Social networking login and registration interface"
+              loading="lazy"
+            >
+            <figcaption>
+              Authentication Interface — User login
+              and account registration functionality.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-section">
+        <h3>March Madness Upset Risk Dashboard</h3>
+        <p>
+          Built an end-to-end data pipeline and interactive
+          BI dashboard in Power BI combining historical Kaggle
+          tournament results, advanced team metrics, and
+          betting market expectations.
+        </p>
+        <ul>
+          <li>
+            <strong>Advanced ETL &amp; Power Query:</strong>
+            Transformed messy string codes into numeric seed
+            values and performed composite-key merges across
+            star-schema tables.
+          </li>
+          <li>
+            <strong>Custom Metric Design:</strong>
+            Engineered binary upset flags, favorite/underdog
+            indicators, and matchup gap calculations to
+            quantify risk.
+          </li>
+          <li>
+            <strong>Data Storytelling:</strong>
+            Designed a three-tiered analytical dashboard
+            guiding users from historical trends and current
+            team strength (ESPN BPI via cbbdata)
+            to real-time matchup predictions.
+          </li>
+        </ul>
+        <p>
+          <a href="https://drive.google.com/file/d/1Lq4xu068RO2VvClD85_csdMJmNJG8jGo/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">
+            View Project Documentation (PDF)
+          </a>
+        </p>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project-section">
+        <h3>NFL Draft IQ &amp; Combine IQ Case Study</h3>
+        <p>
+          Modeled an enterprise-grade cloud system architecture
+          leveraging AWS to convert raw scouting and performance
+          data into real-time interactive insights for fans
+          and analysts.
+        </p>
+        <ul>
+          <li>
+            <strong>Cloud Data Pipeline:</strong>
+            Designed automated ingestion workflows using
+            AWS Lambda, secure structured storage via Amazon S3,
+            and interactive analytics powered by Amazon QuickSight.
+          </li>
+          <li>
+            <strong>Conversational GenAI:</strong>
+            Conceptualized the Draft IQ Assistant powered by
+            Amazon Q Business for natural-language
+            conversational analytics.
+          </li>
+          <li>
+            <strong>SDLC Artifacts:</strong>
+            Engineered UML use-case diagrams, swimlane
+            activity charts, sequence diagrams, and
+            normalized ER database schemas.
+          </li>
+        </ul>
+        <p>
+          <a href="https://drive.google.com/file/d/1sCozlP5f5q2SB1KOz9afdy7idXdIOL27/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">
+            View Case Study Report (PDF)
+          </a>
+        </p>
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="project-section">
+        <h3>HAX Small Business Pizzeria Starter Kit</h3>
+        <p>
+          Designed and developed a modular, reusable small
+          business website template within Penn State's
+          open-source HAX platform. Built custom web components
+          using the Lit library and structured site content
+          with JSON Outline Schema (JOS).
+        </p>
+        <ul>
+          <li>
+            <strong>Novice Mode Content Locking:</strong>
+            Guarded editing interface allowing non-technical
+            business owners to update menus and hours
+            without risking layout stability.
+          </li>
+          <li>
+            <strong>API Integrations:</strong>
+            Embedded Google Maps API for location rendering
+            and Yelp review APIs for social proof.
+          </li>
+          <li>
+            <strong>Streamlined Ordering:</strong>
+            Connected direct links to third-party delivery
+            platforms (DoorDash) and PDF/JPEG menu uploads.
+          </li>
+        </ul>
+        <p>
+          <a href="https://drive.google.com/file/d/1aNhxC9rCdx3bBq-VZfIaYSQihHzIL_3C/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">
+            View Project Report &amp; Designs (PDF)
+          </a>
+        </p>
+      </div>
+
+      <!-- PROJECT 6 -->
+      <div class="project-section">
+        <h3>github-rpg-contributors</h3>
+        <p>
+          A custom web component widget that visualizes
+          GitHub repository contributors as RPG characters
+          using live GitHub API data.
+        </p>
+        <ul>
+          <li>
+            Real-time data fetching from the GitHub API.
+          </li>
+          <li>
+            Dynamic RPG character avatar generation.
+          </li>
+          <li>
+            Customizable organization, repository,
+            and contributor display limits.
+          </li>
+        </ul>
+        <p>
+          <a href="https://github.com/shreyswaroop/github-rpg-contributors"
+             target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </a>
+        </p>
+      </div>
+
+    </portfolio-page>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <portfolio-page id="experience" title="Experience">
+
+      <div class="experience-entry">
+        <h3>Data Entry Clerk – Centurion Health</h3>
+        <p><em>June 2024 – October 2026</em></p>
+        <ul>
+          <li>
+            Maintained and validated company and contractual
+            records across internal systems, ensuring data
+            accuracy, consistency, and confidentiality.
+          </li>
+          <li>
+            Generated reports and managed records to support
+            daily administrative and business operations.
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-entry">
+        <h3>Information Systems Engineer Intern – AAMC</h3>
+        <p><em>June 2023 – August 2023</em></p>
+        <ul>
+          <li>
+            Supported business analysts with systems analysis,
+            requirements gathering, and documentation of
+            existing ("AS-IS") business processes.
+          </li>
+          <li>
+            Participated in Agile Scrum meetings,
+            backlog refinement sessions, and focus groups
+            to develop user stories and business models.
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-entry">
+        <h3>Tutor/Manager – Kumon</h3>
+        <p><em>August 2019 – August 2022</em></p>
+        <ul>
+          <li>
+            Tutored K–12 students in mathematics and English
+            while communicating academic progress to parents.
+          </li>
+          <li>
+            Managed daily operations, including payment
+            processing, facility management, and
+            student enrollment.
+          </li>
+        </ul>
+      </div>
+
+    </portfolio-page>
+
+    <!-- ABOUT ME -->
+    <portfolio-page id="about" title="About Me">
       <p>
-      
+        I'm an Indian-American professional who graduated
+        from Penn State University with a B.S. in Enterprise
+        Technology Integration. I'm passionate about solving
+        complex operational and technical problems through
+        structured data analysis, systems design, and
+        full-stack web applications.
       </p>
       <p>
-        You can edit the current page by modifying <code>index.html</code><br />
-        To edit your <strong>portfolio-sidebar-theme</strong> tag, modify <code>src/portfolio-sidebar-theme.js</code>.
-        This file contains all the HTML, CSS and JavaScript used to render your elements above!
+        Outside of tech, I love hiking, listening to and
+        making music, and playing volleyball. These creative
+        and active outlets keep me balanced, fuel my
+        curiosity, and make me a more well-rounded
+        technologist.
       </p>
-      <p>
-        Web components are easy to follow once you get used to their pattern.
-        Below are links to help on your journey. Good luck, we need you!
-      </p>
-      <ul>
-        <li><a href="https://haxtheweb.org/documentation/ddd" target="_blank">🧑‍🎨 Learn DDD HAX Design system</a></li>
-        <li><a href="https://lit.dev/playground/" target="_blank" rel="nofollow">🔥 Learn Lit</a></li>
-        <li><a href="https://hax.psu.edu" target="_blank">🧙 HAX The Web @ Penn State</a></li>
-      </ul>
-      <h2>Join and Share HAX</h2>
-      <ul>
-        <li><a href="https://github.com/haxtheweb/issues/issues" target="_blank" rel="nofollow">🔮 Ideas to HAX Harder, Better, Faster, Stronger</a></li>
-        <li><a href="https://bit.ly/hax-the-linkedin" target="_blank" rel="nofollow">👔 Share on LinkedIn</a></li>
-        <li><a href="https://bit.ly/hax-the-x" target="_blank" rel="nofollow">🧵 Tweet on X</a></li>
-        <li><a href="https://bit.ly/hax-discord" target="_blank" rel="nofollow">💬 Join Community</a></li>
-      </ul>
-      <h2>Learn the languages and tools</h2>
-      <ul>
-        <li><a href="https://w3schools.com" target="_blank" rel="nofollow">🌐 Learn HTML</a></li>
-        <li><a href="https://web.dev/learn/css/" target="_blank" rel="nofollow">🎨 Learn CSS</a></li>
-        <li><a href="http://Javascript.info" target="_blank" rel="nofollow">💻 Learn JavaScript (JS)</a></li>
-        <li><a href="https://gitimmersion.com" target="_blank" rel="nofollow">🦺 Learn Git / Github</a></li>
-        <li><a href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/" target="_blank" rel="nofollow">📦 Learn NPM</a></li>
-        <li><a href="http://learnux.io" target="_blank" rel="nofollow">📐 Learn UX / UI development</a></li>
-      </ul>
-      <h2>Find purpose and inspiration</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=eC7xzavzEKY" target="_blank" rel="nofollow">🐟 This is Water - David Foster Wallace</a></li>
-        <li><a href="https://www.youtube.com/watch?v=kYfNvmF0Bqw" target="_blank" rel="nofollow">🏗️ Secrets of Life - Steve Jobs</a></li>
-        <li><strong>💡 <em>Never. Stop. Innovating.</em></strong></li>
-      </ul>
-    </div>
-  </details>
+    </portfolio-page>
+
+    <!-- CONTACT -->
+    <portfolio-page id="contact" title="Contact">
+      <p>Email: shreyasniraj@gmail.com</p>
+      <p>Phone: 215-932-7244</p>
+    </portfolio-page>
+
+  </portfolio-sidebar-theme>
 </body>
 </html>
